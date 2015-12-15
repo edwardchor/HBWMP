@@ -1,0 +1,1 @@
+{'positive': ['pos', u'\u4e00\u5e06\u98ce\u987a', u'\u4e86\u4e0d\u8d77', u'\u5929\u4f7f'], 'negative': ['neg', u'\u4e5e\u4e10']}	
