@@ -23,9 +23,7 @@ for eachline in pfile:
 	temp=eachline.replace('\xef\xbb\xbf','').replace('\n','').decode('utf-8')
 	phash.append(temp)
 
-#f = open('new_data.txt')
 for line in sys.stdin:
-#for line in f:
     line = line.strip()
     line = unicode(line, 'utf-8')
     words = GetWords(line)
