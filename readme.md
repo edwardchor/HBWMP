@@ -1,19 +1,11 @@
-- 各个文件的含义：
-	- `negative.txt`&`positive.txt`: 情绪字典
-	- `nlpmapper.py`&'nlpreducer.py':mapper和reducer脚本
-	- `test.txt`:用来测试的小文件
-	- `split_result.txt`:执行测试的输出文件结果
+# hbwmp
+a hadoop based Weibo mood processor
 
-- 如果你需要在自己的虚拟机上运行分词和特征值选取模块：
-	- 安装python 2.*
-	- 安装 pynlpir 
-		- `pip install pynlpir` （这个我在OS X和Ubuntu上都没能执行成功，如果你也执行不了，往下看）
-		- `git clone git://github.com/tsroten/pynlpir.git`
-		- ` pip install -e pynlpir`
-		- > 參考：http://pynlpir.readthedocs.org/en/latest/
-	- 把test.txt文件上传到hdfs
-		- `$HADOOP_HOME/bin/hadoop fs -put {directory of test.txt on **local system**}  {directory of test.txt on **HDFS**}  `
-	- 把所有txt文件和脚本都放到同一个目录下
-	- 'mkdir $HADOOP_HOME/contrib'
-	- 'sudo cp $HADOOP_HOME/./share/hadoop/tools/lib/hadoop_streaming-2.7.1.jar $HADOOP_HOME/contrib/'
-	-  `sudo $HADOOP_HOME/bin/hadoop jar ./contrib/hadoop_streaming-2.7.1.jar -input {directory of test.txt on **HDFS**} -output {output directory on HDFS } -mapper "sudo python ./nlpmapper.py" -reducer "sudo python ./reducer.py"`
+#usage
+data.txt is a truncate of the whole dataset
+
+use processMapper and processReducer to reformat the data
+
+and then use nlpMapper and nlpReducer to get the tag (pos/neg) 
+
+the program is easy to read
